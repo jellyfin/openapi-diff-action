@@ -11,7 +11,7 @@ jobs:
     name: Test - No Changes
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
       - name: Run OpenAPI Diff (no changes)
         id: diff
@@ -36,7 +36,7 @@ jobs:
     name: Test - Compatible Changes
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
       - name: Run OpenAPI Diff (compatible changes)
         id: diff
@@ -76,7 +76,7 @@ jobs:
     name: Test - Breaking Changes
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
       - name: Run OpenAPI Diff (breaking changes)
         id: diff
@@ -101,7 +101,7 @@ jobs:
     name: Test - Fail on Incompatible
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
       - name: Run OpenAPI Diff (should fail)
         id: diff
@@ -124,7 +124,7 @@ jobs:
     name: Test - Output Formats
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
       - name: Run OpenAPI Diff (all formats)
         id: diff
@@ -152,7 +152,7 @@ jobs:
     name: Test - No Artifact When No Changes
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
       - name: Run OpenAPI Diff (no changes)
         id: diff
