@@ -53,6 +53,10 @@ inputs:
     description: 'Add diff results as a PR comment'
     required: false
     default: 'false'
+  pr-number:
+    description: 'Override automatic PR detection and apply comments to this pull request'
+    required: false
+    default: ''
   github-token:
     description: 'GitHub token for posting PR comments (required if add-pr-comment is true)'
     required: false
@@ -98,7 +102,9 @@ runs:
       id: pr-number
       shell: bash
       run: |
-        if [[ "${{ github.event_name }}" == "pull_request" || "${{ github.event_name }}" == "pull_request_target" ]]; then
+        if [[ -n "${{ inputs.pr-number }}" ]]; then
+          echo "number=${{ inputs.pr-number }}" >> "$GITHUB_OUTPUT"
+        elif [[ "${{ github.event_name }}" == "pull_request" || "${{ github.event_name }}" == "pull_request_target" ]]; then
           echo "number=${{ github.event.pull_request.number }}" >> "$GITHUB_OUTPUT"
         elif [[ "${{ github.event_name }}" == "workflow_run" ]]; then
           echo "number=${{ github.event.workflow_run.pull_requests[0].number }}" >> "$GITHUB_OUTPUT"
