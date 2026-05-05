@@ -5,7 +5,7 @@ set -euo pipefail
 # renovate: datasource=docker depName=openapitools/openapi-diff
 DOCKER_IMAGE="openapitools/openapi-diff:2.1.7"
 # renovate: datasource=docker depName=tufin/oasdiff
-OASDIFF_IMAGE="tufin/oasdiff:v1.15.0"
+OASDIFF_IMAGE="tufin/oasdiff:v1.15.2"
 WORKSPACE_DIR="${GITHUB_WORKSPACE:-$(pwd)}"
 TEMP_DIR=$(mktemp -d)
 SPECS_DIR=$(mktemp -d)
